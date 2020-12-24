@@ -10,6 +10,6 @@ export class QuotesService {
   constructor(private httpClient: HttpClient) { }
 
   getQuotes(): Observable<Quote[]> {
-    return this.httpClient.get<Quote[]>('https://type.fit/api/quotes');
+    return this.httpClient.get<Quote[]>('assets/health-quotes.json');
   }
 }

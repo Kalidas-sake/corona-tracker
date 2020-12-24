@@ -30,8 +30,8 @@ export class DashboardComponent implements OnInit {
 
     this.covidService.getGlobalStats().subscribe((globStat) => {
       this.globStats = globStat;
-      this.countryStats = globStat.Countries;
-      console.log(this.globStats.Countries[0].Country);
+      this.countryStats = globStat.Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+      // console.log(this.globStats.Countries[0].Country);
     })
 
   }
@@ -39,16 +39,19 @@ export class DashboardComponent implements OnInit {
 
   onSearchCountry(key: string) {
     console.log(`search key is: ${key}`);
-    const searchResult = this.globStats.Countries.filter((country) => {
+    const searchResult = this.globStats.Countries
+      .filter((country) => {
+        const countryName = country.Country.toLowerCase();
+        if (countryName.includes(key.toLowerCase())) {
+          return true;
+        } else {
+          return false;
+        }
 
-      const countryName = country.Country.toLowerCase();
-      if (countryName.includes(key.toLowerCase())) {
-        return true;
-      } else {
-        return false;
-      }
-
-    });
+      })
+      .sort((a, b) => {
+        return b.TotalConfirmed - a.TotalConfirmed;
+      });
     // console.log(`Search result:`, searchResult);
 
     this.countryStats = searchResult;

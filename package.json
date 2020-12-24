@@ -21,6 +21,7 @@
     "angular-count-to": "0.0.3",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "ng2-google-charts": "^6.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

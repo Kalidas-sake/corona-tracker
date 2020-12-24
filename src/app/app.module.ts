@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CountToModule } from "angular-count-to";
+import { Ng2GoogleChartsModule } from "ng2-google-charts";
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CitiesComponent } from './cities/cities.component';
+import { IndiaComponent } from './india/india.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    CitiesComponent,
+    IndiaComponent,
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CountToModule
+    CountToModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
