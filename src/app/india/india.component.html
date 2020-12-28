@@ -7,12 +7,12 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-sm-10   p-2">
+    <div class="col-md-6 col-sm-10   p-2"  *ngIf="singleState" >
       <div class="row justify-content-center no-gutters">
-        <div class="col-12 text-center">
-          <h5>State wise statistics</h5>
-        </div>
-        <div *ngIf="singleState" class="col-8 table-responsive mt-3">
+       
+        <div class="col-10 table-responsive mt-3">
+
+          <h3 class="text-center fst-italic">{{singleState.state}} <span class="badge bg-info text-dark">{{singleState.statecode}}</span></h3>
 
           <table class="table table-responsive ">
             <tbody>
