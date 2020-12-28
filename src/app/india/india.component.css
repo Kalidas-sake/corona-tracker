@@ -1,0 +1,5 @@
+.scrollBox{
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}

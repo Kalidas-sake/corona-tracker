@@ -1,8 +1,47 @@
 <div class="container-fluid">
   <div class="row justify-content-center mt-4">
-    <div class=" col-sm-6 text-center">
-      <h3>Covid confirmed Cases in India!</h3>
-      <google-chart [data]="geoChart" *ngIf=mapReady></google-chart>
+    <div class="col-md-6 col-sm-10 text-center material-box-less p-2">
+      <h5>Covid confirmed Cases in India!</h5>
+      <div class="scrollBox">
+        <google-chart [data]="geoChart" *ngIf="mapReady" (chartSelect)='select($event)'></google-chart>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-10   p-2">
+      <div class="row justify-content-center no-gutters">
+        <div class="col-12 text-center">
+          <h5>State wise statistics</h5>
+        </div>
+        <div *ngIf="singleState" class="col-8 table-responsive mt-3">
+
+          <table class="table table-responsive ">
+            <tbody>
+
+              <tr>
+                <th>Active:</th>
+                <td> {{singleState.active}}</td>
+              </tr>
+              <tr>
+                <th>Confirmed: </th>
+                <td>{{singleState.confirmed}}</td>
+              </tr>
+              <tr>
+                <th>Deaths: </th>
+                <td>{{singleState.deaths}}</td>
+              </tr>
+              <tr>
+                <th>Recovered: </th>
+                <td>{{singleState.recovered}}</td>
+              </tr>
+              <tr>
+                <th>Last Updated Date: </th>
+                <td>{{singleState.lastupdatedtime}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
